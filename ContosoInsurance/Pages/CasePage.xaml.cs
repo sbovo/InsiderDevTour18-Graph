@@ -13,6 +13,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AdaptiveCards;
 using ContosoInsurance.Models;
 using Windows.ApplicationModel.UserActivities;
 using Windows.UI.Shell;
@@ -37,6 +38,7 @@ namespace ContosoInsurance.Pages
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+
             var selectedCase = e.Parameter as Case;
             Case = selectedCase;
             Bindings.Update();
@@ -73,77 +75,81 @@ namespace ContosoInsurance.Pages
             MessagePanel.Visibility = Visibility.Collapsed;
         }
 
-        /*private static AdaptiveColumn GetImageColumn(Case selectedCase)
-        {
-            var imageName = System.IO.Path.GetFileName(selectedCase.AvatarUri);
-            var imageURL = "https://david.blob.core.windows.net/images/" + imageName;
 
-            return new AdaptiveColumn
-            {
-                Width = AdaptiveColumnWidth.Auto,
-                Items = new List<AdaptiveElement>
-                {
-                    new AdaptiveImage
-                    {
-                        Url = new Uri(imageURL),
-                        Size = AdaptiveImageSize.Small,
-                        Style = AdaptiveImageStyle.Person
-                    }
-                }
-            };
-        }
 
-        private static AdaptiveColumn GetNameColumn(Case selectedCase)
-        {
-            return new AdaptiveColumn
-            {
-                Width = AdaptiveColumnWidth.Stretch,
-                Items = new List<AdaptiveElement>
-                {
-                    new AdaptiveTextBlock
-                    {
-                        Text = selectedCase.FullName,
-                        Weight = AdaptiveTextWeight.Bolder
-                    },
-                    new AdaptiveTextBlock
-                    {
-                        Text = selectedCase.Id,
-                        IsSubtle = true,
-                        Spacing = AdaptiveSpacing.None,
-                        Weight = AdaptiveTextWeight.Bolder
-                    }
-                }
-            };
-        }
+        //#region Adaptive card
+        //private static AdaptiveColumn GetImageColumn(Case selectedCase)
+        //{
+        //    var imageName = System.IO.Path.GetFileName(selectedCase.AvatarUri);
+        //    var imageURL = "https://david.blob.core.windows.net/images/" + imageName;
 
-        private static AdaptiveColumn GetAddressColumn(Case selectedCase)
-        {
-            return new AdaptiveColumn
-            {
-                Width = AdaptiveColumnWidth.Auto,
-                Items = new List<AdaptiveElement>
-                {
-                    new AdaptiveTextBlock
-                    {
-                        Text = $"{selectedCase.Address1}, {selectedCase.Address2}"
-                    }
-                }
-            };
-        }
+        //    return new AdaptiveColumn
+        //    {
+        //        Width = AdaptiveColumnWidth.Auto,
+        //        Items = new List<AdaptiveElement>
+        //        {
+        //            new AdaptiveImage
+        //            {
+        //                Url = new Uri(imageURL),
+        //                Size = AdaptiveImageSize.Small,
+        //                Style = AdaptiveImageStyle.Person
+        //            }
+        //        }
+        //    };
+        //}
 
-        private static AdaptiveColumn GetPhoneColumn(Case selectedCase)
-        {
-            return new AdaptiveColumn
-            {
-                Width = AdaptiveColumnWidth.Auto,
-                Items = new List<AdaptiveElement>
-                {
-                    new AdaptiveTextBlock
-                    {
-                        Text = selectedCase.Phone
-                    }
-                }
-            };
-        }*/
+        //private static AdaptiveColumn GetNameColumn(Case selectedCase)
+        //{
+        //    return new AdaptiveColumn
+        //    {
+        //        Width = AdaptiveColumnWidth.Stretch,
+        //        Items = new List<AdaptiveElement>
+        //        {
+        //            new AdaptiveTextBlock
+        //            {
+        //                Text = selectedCase.FullName,
+        //                Weight = AdaptiveTextWeight.Bolder
+        //            },
+        //            new AdaptiveTextBlock
+        //            {
+        //                Text = selectedCase.Id,
+        //                IsSubtle = true,
+        //                Spacing = AdaptiveSpacing.None,
+        //                Weight = AdaptiveTextWeight.Bolder
+        //            }
+        //        }
+        //    };
+        //}
+
+        //private static AdaptiveColumn GetAddressColumn(Case selectedCase)
+        //{
+        //    return new AdaptiveColumn
+        //    {
+        //        Width = AdaptiveColumnWidth.Auto,
+        //        Items = new List<AdaptiveElement>
+        //        {
+        //            new AdaptiveTextBlock
+        //            {
+        //                Text = $"{selectedCase.Address1}, {selectedCase.Address2}"
+        //            }
+        //        }
+        //    };
+        //}
+
+        //private static AdaptiveColumn GetPhoneColumn(Case selectedCase)
+        //{
+        //    return new AdaptiveColumn
+        //    {
+        //        Width = AdaptiveColumnWidth.Auto,
+        //        Items = new List<AdaptiveElement>
+        //        {
+        //            new AdaptiveTextBlock
+        //            {
+        //                Text = selectedCase.Phone
+        //            }
+        //        }
+        //    };
+        //}
+        //#endregion
     }
 }
